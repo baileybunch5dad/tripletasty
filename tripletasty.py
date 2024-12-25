@@ -10,6 +10,7 @@ import time
 from dotenv import load_dotenv
 
 # from d10h882
+# from cpc
 
 if not os.path.exists(".env"):
     print("Please create a file named .env with two properties to access your TastyTrade account for reading data")
