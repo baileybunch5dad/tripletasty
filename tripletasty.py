@@ -9,6 +9,8 @@ from enum import Enum
 import time
 from dotenv import load_dotenv
 
+# from d10h882
+
 if not os.path.exists(".env"):
     print("Please create a file named .env with two properties to access your TastyTrade account for reading data")
     print("TT_USERNAME=<Your-AccountId>")
