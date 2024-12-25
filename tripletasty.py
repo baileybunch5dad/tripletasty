@@ -8,22 +8,26 @@ import websocket
 from enum import Enum
 import time
 from dotenv import load_dotenv
+import sys
 
 # from d10h882
 # from cpc
 
-if not os.path.exists(".env"):
-    print("Please create a file named .env with two properties to access your TastyTrade account for reading data")
-    print("TT_USERNAME=<Your-AccountId>")
-    print("TT_PASSWORD=<Your-Password>")
-    exit
+
     
-# Load the .env file
-load_dotenv()
+
 
 if os.getenv('TT_USERNAME') is None or os.getenv('TT_PASSWORD') is None:
-    print("Please set environment variables TT_USERNAME and TT_PASSWORD")
-    exit
+    if not os.path.exists(".env"):
+        print("Please create a file named .env with two properties to access your TastyTrade account for reading data")
+        print("TT_USERNAME=<Your-AccountId>")
+        print("TT_PASSWORD=<Your-Password>")
+        print("Or set them as environment variable pre-execution")
+        print(f"   TT_USERNAME=<Your-AccountId> TT_PASSWORD=<Your-Password> python {sys.argv[0]}")
+        exit
+    else:
+        # Load the .env file
+        load_dotenv()
     
 class TTOrderType(Enum):
   LIMIT = 'Limit'
