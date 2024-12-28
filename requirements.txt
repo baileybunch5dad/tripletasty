@@ -20,3 +20,4 @@ flask_login
 psycopg2-binary
 authlib
 httpx
+path
