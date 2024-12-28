@@ -4,11 +4,16 @@ import re
 import asyncio
 from path import Path
 from typing import *
+import datetime
 
-loop = asyncio.get_event_loop()
+# from Tutorial
+# import asyncio: Learn Python's AsyncIO #2
+
+loop = asyncio.get_event_loop() # asyncio.get_event_loop()
+                                # loop = _
+
 loop.run_until_complete(asyncio.sleep(5))
 # loop.run_forever()
-import datetime
 
 def print_now():
     print(datetime.datetime.now())
