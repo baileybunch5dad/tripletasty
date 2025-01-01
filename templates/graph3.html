@@ -10,9 +10,9 @@
     <canvas id="myChart" width="900" height="400"></canvas>
     <script>
  const ctx = document.getElementById('myChart').getContext('2d');
- var allxs = {{ xlist | tojson | safe}};
- var allys = {{ ylist | tjson | safe }};
- var data = allxs.map((x, index) => ({x, y: allyx[index]}));
+ var allxs = {{ xlist | tojson | safe }};
+ var allys = {{ ylist | tojson | safe }};
+ var data = allxs.map((x, index) => ({x, y: allys[index]}));
  console.log(data);
  zzz = allxs;
  console.log(zzz);
@@ -27,12 +27,13 @@ const myChart = new Chart(ctx, {
     data: {
         datasets: [{
             label: xstr,
-            data: [
-                { x: 1, y: 2 },
-                { x: 3, y: 5 },
-                { x: 6, y: 8 },
-                // Add more data points here
-            ],
+            data: data,
+            // data: [
+            //     { x: 1, y: 2 },
+            //     { x: 3, y: 5 },
+            //     { x: 6, y: 8 },
+            //     // Add more data points here
+            // ],
             backgroundColor: 'rgba(255, 99, 132, 0.2)',
             borderColor: 'rgba(255, 99, 132, 1)',
             pointRadius: 5,
