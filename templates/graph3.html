@@ -13,20 +13,20 @@
  var allxs = {{ xlist | tojson | safe }};
  var allys = {{ ylist | tojson | safe }};
  var data = allxs.map((x, index) => ({x, y: allys[index]}));
- console.log(data);
+ // console.log(data);
  zzz = allxs;
- console.log(zzz);
+ // console.log(zzz);
  xlist = zzz;
 // var xlist = [1,2,3];
 // console.log(xlist);
-var xstr = xlist.toString();
+// var xstr = xlist.toString();
 //  var xstr = 'hello';
 //  console.log(xaxis)
 const myChart = new Chart(ctx, {
     type: 'scatter',
     data: {
         datasets: [{
-            label: xstr,
+            label: 'CLT mean of many Weibull samples',
             data: data,
             // data: [
             //     { x: 1, y: 2 },
